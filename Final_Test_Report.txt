@@ -1,0 +1,584 @@
+/// The following is generated from execution of TestDate() function.
+/// It clearly illustrates the correctness of all the functionalities mentioned in the assignment
+/// Exception paths for most corner cases have been covered.
+/// The function/program is known to NOT crash under various inputs according to the tests passed
+/// Near the end of output, user is prompted to enter a date, for checking istream function. 
+/// IMPORTANT : Due to large no. of lines in output of test file, the console of some IDE's 
+		like Code::Blocks omits a chunk of starting lines of output.
+
+		
+Test Date Data Type
+*************************************************************
+Checking DateFormat(const char* dateFormat, const char* monthFormat, const char* yearFormat)
+HAPPY PATHS:
+(NULL, NULL, NULL)
+(NULL, NULL, yy)
+(NULL, NULL, yyyy)
+(NULL, m, NULL)
+(NULL, m, yy)
+(NULL, m, yyyy)
+(NULL, mm, NULL)
+(NULL, mm, yy)
+(NULL, mm, yyyy)
+(NULL, mmm, NULL)
+(NULL, mmm, yy)
+(NULL, mmm, yyyy)
+(d, NULL, NULL)
+(d, NULL, yy)
+(d, NULL, yyyy)
+(d, m, NULL)
+(d, m, yy)
+(d, m, yyyy)
+(d, mm, NULL)
+(d, mm, yy)
+(d, mm, yyyy)
+(d, mmm, NULL)
+(d, mmm, yy)
+(d, mmm, yyyy)
+(dd, NULL, NULL)
+(dd, NULL, yy)
+(dd, NULL, yyyy)
+(dd, m, NULL)
+(dd, m, yy)
+(dd, m, yyyy)
+(dd, mm, NULL)
+(dd, mm, yy)
+(dd, mm, yyyy)
+(dd, mmm, NULL)
+(dd, mmm, yy)
+(dd, mmm, yyyy)
+Exceptions Caught : 0
+
+EXCEPTION PATHS :
+Date exceptions: 
+Invalid Argument : (, mm, yyyy)
+Invalid Argument : (ddd, mm, yyyy)
+Invalid Argument : (ab, mm, yyyy)
+Invalid Argument : (1-t, mm, yyyy)
+Invalid Argument : (  @#$ 1920 , mm, yyyy)
+Month exceptions: 
+Invalid Argument : (dd, , yyyy)
+Invalid Argument : (dd, mmmm, yyyy)
+Invalid Argument : (dd, mm1ty, yyyy)
+Invalid Argument : (dd,  !@//, yyyy)
+Invalid Argument : (dd, 0e1, yyyy)
+Year exceptions: 
+Invalid Argument : (dd, mm, )
+Invalid Argument : (dd, mm, y)
+Invalid Argument : (dd, mm, yyy)
+Invalid Argument : (dd, mm, yyyyy)
+Invalid Argument : (dd, mm, 12-yt)
+
+*************************************************************
+Checking DateFormat(const char* format)
+It requires date month and year format to be separated by -, even if they are NULL
+NULL is printed only for easy reading and understanding.
+HAPPY PATHS :
+"--yy"
+"--yyyy"
+"-m-yy"
+"-m-yyyy"
+"-mm-yy"
+"-mm-yyyy"
+"-mmm-yy"
+"-mmm-yyyy"
+"d--yy"
+"d--yyyy"
+"d-m-yy"
+"d-m-yyyy"
+"d-mm-yy"
+"d-mm-yyyy"
+"d-mmm-yy"
+"d-mmm-yyyy"
+"dd--yy"
+"dd--yyyy"
+"dd-m-yy"
+"dd-m-yyyy"
+"dd-mm-yy"
+"dd-mm-yyyy"
+"dd-mmm-yy"
+"dd-mmm-yyyy"
+Exceptions Caught : 0
+
+EXCEPTION PATHS
+Date exceptions: 
+Invalid Argument : "mm-yy"
+Invalid Argument : "--mm-yy"
+Invalid Argument : "ddd-mm-yy"
+Invalid Argument : "ddmm-yy"
+Invalid Argument : "12d3mm-yy"
+Month exceptions: 
+Invalid Argument : "dd-yy"
+Invalid Argument : "dd-mmyy"
+Invalid Argument : "dd-mmmm-yy"
+Invalid Argument : "dd-momq-yy"
+Invalid Argument : "dd-!@3-4-yy"
+Year exceptions: 
+Invalid Argument : "dd-mm---"
+Invalid Argument : "dd-mm-yyy"
+Invalid Argument : "dd-mm-y"
+Invalid Argument : "dd-mm-!2s"
+Invalid Argument : "dd-mm-yy-"
+
+*************************************************************
+Checking DateFormat::DateFormat()
+Default DateFormat created 
+
+*************************************************************
+Checking Date(Day d, Month m, Year y)
+HAPPY AND EXCEPTION PATHS : 
+Out of Range          : (1, 1, 1949)
+Date type constructed : (1, 1, 1950)
+Date type constructed : (1, 1, 2000)
+Date type constructed : (1, 1, 2049)
+Out of Range          : (1, 1, 2050)
+Out of Range          : (1, 2, 1949)
+Date type constructed : (1, 2, 1950)
+Date type constructed : (1, 2, 2000)
+Date type constructed : (1, 2, 2049)
+Out of Range          : (1, 2, 2050)
+Out of Range          : (1, 5, 1949)
+Date type constructed : (1, 5, 1950)
+Date type constructed : (1, 5, 2000)
+Date type constructed : (1, 5, 2049)
+Out of Range          : (1, 5, 2050)
+Out of Range          : (1, 11, 1949)
+Date type constructed : (1, 11, 1950)
+Date type constructed : (1, 11, 2000)
+Date type constructed : (1, 11, 2049)
+Out of Range          : (1, 11, 2050)
+Out of Range          : (1, 12, 1949)
+Date type constructed : (1, 12, 1950)
+Date type constructed : (1, 12, 2000)
+Date type constructed : (1, 12, 2049)
+Out of Range          : (1, 12, 2050)
+Out of Range          : (15, 1, 1949)
+Date type constructed : (15, 1, 1950)
+Date type constructed : (15, 1, 2000)
+Date type constructed : (15, 1, 2049)
+Out of Range          : (15, 1, 2050)
+Out of Range          : (15, 2, 1949)
+Date type constructed : (15, 2, 1950)
+Date type constructed : (15, 2, 2000)
+Date type constructed : (15, 2, 2049)
+Out of Range          : (15, 2, 2050)
+Out of Range          : (15, 5, 1949)
+Date type constructed : (15, 5, 1950)
+Date type constructed : (15, 5, 2000)
+Date type constructed : (15, 5, 2049)
+Out of Range          : (15, 5, 2050)
+Out of Range          : (15, 11, 1949)
+Date type constructed : (15, 11, 1950)
+Date type constructed : (15, 11, 2000)
+Date type constructed : (15, 11, 2049)
+Out of Range          : (15, 11, 2050)
+Out of Range          : (15, 12, 1949)
+Date type constructed : (15, 12, 1950)
+Date type constructed : (15, 12, 2000)
+Date type constructed : (15, 12, 2049)
+Out of Range          : (15, 12, 2050)
+Out of Range          : (28, 1, 1949)
+Date type constructed : (28, 1, 1950)
+Date type constructed : (28, 1, 2000)
+Date type constructed : (28, 1, 2049)
+Out of Range          : (28, 1, 2050)
+Out of Range          : (28, 2, 1949)
+Date type constructed : (28, 2, 1950)
+Date type constructed : (28, 2, 2000)
+Date type constructed : (28, 2, 2049)
+Out of Range          : (28, 2, 2050)
+Out of Range          : (28, 5, 1949)
+Date type constructed : (28, 5, 1950)
+Date type constructed : (28, 5, 2000)
+Date type constructed : (28, 5, 2049)
+Out of Range          : (28, 5, 2050)
+Out of Range          : (28, 11, 1949)
+Date type constructed : (28, 11, 1950)
+Date type constructed : (28, 11, 2000)
+Date type constructed : (28, 11, 2049)
+Out of Range          : (28, 11, 2050)
+Out of Range          : (28, 12, 1949)
+Date type constructed : (28, 12, 1950)
+Date type constructed : (28, 12, 2000)
+Date type constructed : (28, 12, 2049)
+Out of Range          : (28, 12, 2050)
+Out of Range          : (29, 1, 1949)
+Date type constructed : (29, 1, 1950)
+Date type constructed : (29, 1, 2000)
+Date type constructed : (29, 1, 2049)
+Out of Range          : (29, 1, 2050)
+Domain Error          : (29, 2, 1949)
+Domain Error          : (29, 2, 1950)
+Date type constructed : (29, 2, 2000)
+Domain Error          : (29, 2, 2049)
+Domain Error          : (29, 2, 2050)
+Out of Range          : (29, 5, 1949)
+Date type constructed : (29, 5, 1950)
+Date type constructed : (29, 5, 2000)
+Date type constructed : (29, 5, 2049)
+Out of Range          : (29, 5, 2050)
+Out of Range          : (29, 11, 1949)
+Date type constructed : (29, 11, 1950)
+Date type constructed : (29, 11, 2000)
+Date type constructed : (29, 11, 2049)
+Out of Range          : (29, 11, 2050)
+Out of Range          : (29, 12, 1949)
+Date type constructed : (29, 12, 1950)
+Date type constructed : (29, 12, 2000)
+Date type constructed : (29, 12, 2049)
+Out of Range          : (29, 12, 2050)
+Out of Range          : (30, 1, 1949)
+Date type constructed : (30, 1, 1950)
+Date type constructed : (30, 1, 2000)
+Date type constructed : (30, 1, 2049)
+Out of Range          : (30, 1, 2050)
+Domain Error          : (30, 2, 1949)
+Domain Error          : (30, 2, 1950)
+Domain Error          : (30, 2, 2000)
+Domain Error          : (30, 2, 2049)
+Domain Error          : (30, 2, 2050)
+Out of Range          : (30, 5, 1949)
+Date type constructed : (30, 5, 1950)
+Date type constructed : (30, 5, 2000)
+Date type constructed : (30, 5, 2049)
+Out of Range          : (30, 5, 2050)
+Out of Range          : (30, 11, 1949)
+Date type constructed : (30, 11, 1950)
+Date type constructed : (30, 11, 2000)
+Date type constructed : (30, 11, 2049)
+Out of Range          : (30, 11, 2050)
+Out of Range          : (30, 12, 1949)
+Date type constructed : (30, 12, 1950)
+Date type constructed : (30, 12, 2000)
+Date type constructed : (30, 12, 2049)
+Out of Range          : (30, 12, 2050)
+Out of Range          : (31, 1, 1949)
+Date type constructed : (31, 1, 1950)
+Date type constructed : (31, 1, 2000)
+Date type constructed : (31, 1, 2049)
+Out of Range          : (31, 1, 2050)
+Domain Error          : (31, 2, 1949)
+Domain Error          : (31, 2, 1950)
+Domain Error          : (31, 2, 2000)
+Domain Error          : (31, 2, 2049)
+Domain Error          : (31, 2, 2050)
+Out of Range          : (31, 5, 1949)
+Date type constructed : (31, 5, 1950)
+Date type constructed : (31, 5, 2000)
+Date type constructed : (31, 5, 2049)
+Out of Range          : (31, 5, 2050)
+Domain Error          : (31, 11, 1949)
+Domain Error          : (31, 11, 1950)
+Domain Error          : (31, 11, 2000)
+Domain Error          : (31, 11, 2049)
+Domain Error          : (31, 11, 2050)
+Out of Range          : (31, 12, 1949)
+Date type constructed : (31, 12, 1950)
+Date type constructed : (31, 12, 2000)
+Date type constructed : (31, 12, 2049)
+Out of Range          : (31, 12, 2050)
+
+Additional Exception paths
+The user can static cast invalid values to enum.
+Checking that Date(day, month, year) doesn't crash
+Checking day exceptions
+Invalid Argument      : (32, 6, 2014)
+Invalid Argument      : (-13, 6, 2014)
+Invalid Argument      : (1111, 6, 2014)
+Checking month exceptions
+Invalid Argument      : (4, 0, 2014)
+Invalid Argument      : (4, 13, 2014)
+Invalid Argument      : (4, -10, 2014)
+Checking year exceptions
+Out of Range          : (4, 6, 4294965282)
+Out of Range          : (4, 6, 4294967276)
+
+*************************************************************
+Checking explicit Date(const char* date)
+Checking for formats not allowed for input.
+NULL, mm, yy : Exception Raised. The current format does not support input.
+dd, NULL, yy : Exception Raised. The current format does not support input.
+dd, mmm, yy : Exception Raised. The current format does not support input.
+dd, mm, NULL : Exception Raised. The current format does not support input.
+
+Checking for input-acceptable date arguments
+Setting format as dd-mm-yyyy
+
+Checking for non 31 / 30 days months
+Successfully constructed : "31-01-1980"
+Domain Error             : "31-02-1980"
+Successfully constructed : "31-03-1980"
+Domain Error             : "31-04-1980"
+Successfully constructed : "31-05-1980"
+Domain Error             : "31-06-1980"
+Successfully constructed : "31-07-1980"
+Successfully constructed : "31-08-1980"
+Domain Error             : "31-09-1980"
+Successfully constructed : "31-10-1980"
+Domain Error             : "31-11-1980"
+Successfully constructed : "31-12-1980"
+Domain Error             : "30-02-1980"
+
+Checking for 29th Feb cases
+Domain Error             : "29-02-1950"
+Successfully constructed : "29-02-1972"
+Successfully constructed : "29-02-2000"
+Domain Error             : "29-02-2014"
+Successfully constructed : "29-02-2048"
+Domain Error             : "29-02-2100"
+
+Checking for invalid day parameters.
+NOTE : If date is valid but not matching dd-mm-yyyy, Invalid argument will be thrown 
+Invalid Argument         : "1-07-2014"
+Invalid Argument         : "d07-2014"
+Invalid Argument         : "-107-2014"
+Invalid Argument         : "-12-07-2014"
+Invalid Argument         : "32-07-2014"
+Invalid Argument         : "0-07-2014"
+Invalid Argument         : "1p!!@}&-07-2014"
+Invalid Argument         : "07-2014"
+
+Checking for invalid month parameters.
+NOTE : If date is valid but not matching dd-mm-yyyy, Invalid argument will be thrown 
+Invalid Argument         : "07-1-2014"
+Invalid Argument         : "07-Mar-2014"
+Invalid Argument         : "07-m2014"
+Invalid Argument         : "07--12014"
+Invalid Argument         : "07--12-2014"
+Invalid Argument         : "07-13-2014"
+Invalid Argument         : "07-0-2014"
+Invalid Argument         : "07-1p!!@}&-2014"
+Invalid Argument         : "07-2014"
+
+Checking for invalid year parameters.
+NOTE : If date is valid but not matching dd-mm-yyyy, Invalid argument will be thrown 
+Invalid Argument         : "07-12-96"
+Invalid Argument         : "07-12-1a98"
+Invalid Argument         : "07-12--2014"
+Invalid Argument         : "07-12-"
+Invalid Argument         : "07-12-20000"
+Invalid Argument         : "07-12-1p!!@}&-"
+
+*************************************************************
+Checking functionalities of Date through : 
+Date d1 (D31, May, 1996) = 31 05 1996
+Date d2 ("24-04-2001") = 24 04 2001
+Date d3 = 06 03 2016
+
+*************************************************************
+BASIC ASSIGNMENT OPERATOR
+Before Assignment : d3 = 06 03 2016, d1 = 31 05 1996
+Assigning d3 = d1...
+After Assignment  : d3 = 31 05 1996, d1 = 31 05 1996
+Testing SELF ASSIGNMENT
+Before Assignment : d3 = 31 05 1996
+Assigning d3 = d3...
+After Assignment  : d3 = 31 05 1996
+
+*************************************************************
+UNARY ARITHMETIC OPERATORS
+operator ++()
+Before ++ pre-operator : d1 = 30 06 1999
+After  ++ pre-operator : d1 = 01 07 1999
+Before ++ pre-operator : d2 = 31 12 2040
+After  ++ pre-operator : d2 = 01 01 2041
+EXCEPTION PATH: 
+Before ++ pre-operator : d3 = 31 12 2049
+After  ++ pre-operator : d3 = Exception raised. Out of range error on Date.
+
+operator ++(int)
+Checking the post-fix property of operator++(int) :
+d1 = 27 12 1999
+Assigning d3 = d1++ 
+d3 = 27 12 1999
+d1 = 03 01 2000
+EXCEPTION PATH :
+Operator ++ (post) on d4 = 27 12 2049 : Exception raised. Out of range error on Date.
+
+*************************************************************
+operator --()
+Before -- pre-operator : d1 = 01 03 2016
+After  -- pre-operator : d1 = 29 02 2016
+Before -- pre-operator : d2 = 01 01 1960
+After  -- pre-operator : d2 = 31 12 1959
+EXCEPTION PATH : 
+Before -- pre-operator : d2 = 01 01 1950
+After  -- pre-operator : d2 = Exception raised. Out of range error on Date.
+operator --(int)
+Before -- post-operator : d1 = 07 08 2033
+After  -- post-operator : d1 = 31 07 2033
+Before -- post-operator : d2 = 03 01 2000
+After  -- post-operator : d2 = 27 12 1999
+EXCEPTION PATH : 
+Before -- post-operator : d2 = 04 01 1950
+After  -- pre-operator : d2 = Exception raised. Out of range error on Date.
+
+*************************************************************
+BINARY ARITHMETIC OPERATIONS
+operator -
+Days b/w d1 = 01 01 1960 and d2 = 29 02 1960
+d1 - d2 = 59
+
+operator +
+Adding days = 400 to d1 = 01 01 1960
+01 01 1960 + 400 = 04 02 1961
+Exception Path : 
+Adding days = -30 to d4 = 23 01 1950  : Exception raised. Out of range error on Date.
+Adding days = 3000 to d4 = 03 01 2044 : Exception raised. Out of range error on Date.
+
+*************************************************************
+CAST OPERATORS
+Week Number for date d1 = 01 01 1960 : 53
+Week Number for date d2 = 29 02 1960 : 9
+
+Month for date d1 = 01 01 1960 : 1
+Month for date d2 = 29 02 1960 : 2
+
+Week Day for date d1 = 01 01 1960 : 5
+Week Day for date d2 = 29 02 1960 : 1
+
+Is the year of date d1 = 01 01 1960 leap year? -> True
+Is the year of date d2 = 29 02 1960 leap year? -> True
+
+*************************************************************
+BINARY RELATIONAL OPERATORS
+Is date d2 = 20 12 2033 == date d1 = 20 11 2033 ? -> False
+Is date d3 = 20 11 2033 == date d1 = 20 11 2033 ? -> True
+
+Is date d2 = 20 12 2033 != date d1 = 20 11 2033 ? -> True
+Is date d3 = 20 11 2033 != date d1 = 20 11 2033 ? -> False
+
+Is date d2 = 20 12 2033 < date d1 = 20 11 2033 ? -> False
+Is date d3 = 20 11 2033 < date d1 = 20 11 2033 ? -> False
+
+Is date d2 = 20 12 2033 <= date d1 = 20 11 2033 ? -> False
+Is date d3 = 20 11 2033 <= date d1 = 20 11 2033 ? -> True
+
+Is date d2 = 20 12 2033 > date d1 = 20 11 2033 ? -> True
+Is date d3 = 20 11 2033 > date d1 = 20 11 2033 ? -> False
+
+Is date d2 = 20 12 2033 >= date d1 = 20 11 2033 ? -> True
+Is date d3 = 20 11 2033 >= date d1 = 20 11 2033 ? -> True
+
+*************************************************************
+FORMAT FUNCTIONS AND OSTREAM
+
+For d1 = 04/06/2010 and d2 = 30/11/1979
+Setting date format as : --
+d1                     : June 
+d2                     : November 
+Setting date format as : --yy
+d1                     : June 10
+d2                     : November 79
+Setting date format as : --yyyy
+d1                     : June 2010
+d2                     : November 1979
+Setting date format as : -m-
+d1                     : 6 
+d2                     : 11 
+Setting date format as : -m-yy
+d1                     : 6 10
+d2                     : 11 79
+Setting date format as : -m-yyyy
+d1                     : 6 2010
+d2                     : 11 1979
+Setting date format as : -mm-
+d1                     : 06 
+d2                     : 11 
+Setting date format as : -mm-yy
+d1                     : 06 10
+d2                     : 11 79
+Setting date format as : -mm-yyyy
+d1                     : 06 2010
+d2                     : 11 1979
+Setting date format as : -mmm-
+d1                     : Jun 
+d2                     : Nov 
+Setting date format as : -mmm-yy
+d1                     : Jun 10
+d2                     : Nov 79
+Setting date format as : -mmm-yyyy
+d1                     : Jun 2010
+d2                     : Nov 1979
+Setting date format as : d--
+d1                     : 4 June 
+d2                     : 30 November 
+Setting date format as : d--yy
+d1                     : 4 June 10
+d2                     : 30 November 79
+Setting date format as : d--yyyy
+d1                     : 4 June 2010
+d2                     : 30 November 1979
+Setting date format as : d-m-
+d1                     : 4 6 
+d2                     : 30 11 
+Setting date format as : d-m-yy
+d1                     : 4 6 10
+d2                     : 30 11 79
+Setting date format as : d-m-yyyy
+d1                     : 4 6 2010
+d2                     : 30 11 1979
+Setting date format as : d-mm-
+d1                     : 4 06 
+d2                     : 30 11 
+Setting date format as : d-mm-yy
+d1                     : 4 06 10
+d2                     : 30 11 79
+Setting date format as : d-mm-yyyy
+d1                     : 4 06 2010
+d2                     : 30 11 1979
+Setting date format as : d-mmm-
+d1                     : 4 Jun 
+d2                     : 30 Nov 
+Setting date format as : d-mmm-yy
+d1                     : 4 Jun 10
+d2                     : 30 Nov 79
+Setting date format as : d-mmm-yyyy
+d1                     : 4 Jun 2010
+d2                     : 30 Nov 1979
+Setting date format as : dd--
+d1                     : 04 June 
+d2                     : 30 November 
+Setting date format as : dd--yy
+d1                     : 04 June 10
+d2                     : 30 November 79
+Setting date format as : dd--yyyy
+d1                     : 04 June 2010
+d2                     : 30 November 1979
+Setting date format as : dd-m-
+d1                     : 04 6 
+d2                     : 30 11 
+Setting date format as : dd-m-yy
+d1                     : 04 6 10
+d2                     : 30 11 79
+Setting date format as : dd-m-yyyy
+d1                     : 04 6 2010
+d2                     : 30 11 1979
+Setting date format as : dd-mm-
+d1                     : 04 06 
+d2                     : 30 11 
+Setting date format as : dd-mm-yy
+d1                     : 04 06 10
+d2                     : 30 11 79
+Setting date format as : dd-mm-yyyy
+d1                     : 04 06 2010
+d2                     : 30 11 1979
+Setting date format as : dd-mmm-
+d1                     : 04 Jun 
+d2                     : 30 Nov 
+Setting date format as : dd-mmm-yy
+d1                     : 04 Jun 10
+d2                     : 30 Nov 79
+Setting date format as : dd-mmm-yyyy
+d1                     : 04 Jun 2010
+d2                     : 30 Nov 1979
+
+*************************************************************
+CHECKING ISTREAM
+Enter a valid date format for defining input format
+dd-mm-yyyy
+Enter date in dd-mm-yyyy format
+22-06-1996
+Enter format for output
+dd-m-yyyy
+Input Date : 22 6 1996

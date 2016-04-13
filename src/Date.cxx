@@ -1,3 +1,7 @@
+/*
+* Author : Avikalp Srivastava
+*/
+
 /*********************************** C++ Headers ************************************/
 #include "Date.h"
 #include <iostream>

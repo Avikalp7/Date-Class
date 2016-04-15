@@ -3,8 +3,6 @@
 /// Exception paths for most corner cases have been covered.
 /// The function/program is known to NOT crash under various inputs according to the tests passed
 /// Near the end of output, user is prompted to enter a date, for checking istream function. 
-/// IMPORTANT : Due to large no. of lines in output of test file, the console of some IDE's 
-		like Code::Blocks omits a chunk of starting lines of output.
 
 		
 Test Date Data Type
